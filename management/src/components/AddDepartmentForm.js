@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 
 const AddDepartmentForm = ({ onAddDepartment }) => {
   const [name, setName] = useState('');
@@ -12,9 +12,20 @@ const AddDepartmentForm = ({ onAddDepartment }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Add Department</h3>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        border: '1px solid black',
+        padding: '20px',
+        margin: '10px',
+        display: 'inline-block',
+        width: '40%',
+        verticalAlign: 'top',
+      }}
+    >
+      <h3 style={{ marginBottom: '15px' }}>Add Department</h3>
       <input
+        style={{ display: 'block', marginBottom: '10px', width: '100%' }}
         type="text"
         placeholder="Department Name"
         value={name}
@@ -22,13 +33,16 @@ const AddDepartmentForm = ({ onAddDepartment }) => {
         required
       />
       <input
+        style={{ display: 'block', marginBottom: '10px', width: '100%' }}
         type="text"
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         required
       />
-      <button type="submit">Add Department</button>
+      <button style={{ width: '100%' }} type="submit">
+        Add Department
+      </button>
     </form>
   );
 };
