@@ -1,10 +1,13 @@
-import React from 'react';
+ import React from 'react';
 
 const EmployeeTable = ({ employees }) => {
   return (
-    <div>
-      <h3>Employee Details</h3>
-      <table border="1">
+    <div style={{ marginTop: '20px', padding: '10px', border: '1px solid black' }}>
+      <h3 style={{ marginBottom: '15px' }}>Employee Details</h3>
+      <table
+        border="1"
+        style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}
+      >
         <thead>
           <tr>
             <th>ID</th>
