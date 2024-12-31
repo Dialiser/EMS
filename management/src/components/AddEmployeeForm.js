@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 
 const AddEmployeeForm = ({ departments, onAddEmployee }) => {
   const [name, setName] = useState('');
@@ -14,9 +14,20 @@ const AddEmployeeForm = ({ departments, onAddEmployee }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Add Employee</h3>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        border: '1px solid black',
+        padding: '20px',
+        margin: '10px',
+        display: 'inline-block',
+        width: '40%',
+        verticalAlign: 'top',
+      }}
+    >
+      <h3 style={{ marginBottom: '15px' }}>Add Employee</h3>
       <input
+        style={{ display: 'block', marginBottom: '10px', width: '100%' }}
         type="text"
         placeholder="Employee Name"
         value={name}
@@ -24,6 +35,7 @@ const AddEmployeeForm = ({ departments, onAddEmployee }) => {
         required
       />
       <select
+        style={{ display: 'block', marginBottom: '10px', width: '100%' }}
         value={department}
         onChange={(e) => setDepartment(e.target.value)}
         required
@@ -38,13 +50,16 @@ const AddEmployeeForm = ({ departments, onAddEmployee }) => {
         ))}
       </select>
       <input
+        style={{ display: 'block', marginBottom: '10px', width: '100%' }}
         type="text"
         placeholder="Address"
         value={address}
         onChange={(e) => setAddress(e.target.value)}
         required
       />
-      <button type="submit">Add Employee</button>
+      <button style={{ width: '100%' }} type="submit">
+        Add Employee
+      </button>
     </form>
   );
 };
